@@ -1,5 +1,42 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
+
+import react from '@astrojs/react';
+
+import tailwindcss from '@tailwindcss/vite';
+
+import icon from 'astro-icon';
 
 // https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  integrations: [react(), icon()],
+
+  vite: {
+    plugins: [tailwindcss()]
+  },
+
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: "Rubik",
+      cssVariable: "--font-rubik",
+      options: {}
+    },
+    {
+      provider: fontProviders.google(),
+      name: "Roboto Mono",
+      cssVariable: "--font-roboto-mono",
+      weights: [400, 500, 700, 800, 900],
+       display: "swap",
+      options: {}
+    },
+    {
+      provider: fontProviders.google(),
+      name: "Montserrat",
+      cssVariable: "--font-montserrat",
+      weights: [400, 500, 700, 800, 900],
+      display: "swap",
+      options: {}
+    }
+  ]
+});

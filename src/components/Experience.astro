@@ -1,0 +1,201 @@
+---
+const experiences = [
+  {
+    company: "Metrica",
+    position: "Senior Backend Developer",
+    date: "Feb 2026 - Present",
+    url: "https://www.metrica-global.com/pe/",
+  },
+  {
+    company: "Apuesta Total",
+    position: "Fullstack Developer",
+    date: "Nov 2024 - Feb 2026",
+    url: "https://www.apuestatotal.com/",
+  },
+  {
+    company: "Grupo Efe - Juntoz",
+    position: "Fullstack Developer",
+    date: "Aug 2023 - Nov 2024",
+    url: "https://efe.juntoz.com/",
+  },
+  {
+    company: "Plazbot",
+    position: "Fullstack Developer",
+    date: "Sep 2022 - Sep 2023",
+    url: "https://www.plazbot.com/",
+  },
+  {
+    company: "Sigma",
+    position: "Fullstack Developer",
+    date: "June 2022 - June 2023",
+    url: "https://sigma-peru.com/",
+  },
+  {
+    company: "Grupo Consigueventas E.I.R.L",
+    position: "Backend Developer",
+    date: "Jan 2022 - July 2022",
+    url: "https://consigueventas.com/",
+  },
+];
+---
+
+<section class="experience-section">
+  <h1 class="section-title">Experience</h1>
+  <div class="experience-section__content">
+    {
+      experiences.map((exp) => (
+        <div class="experience-item">
+          <div class="experience-item__marker" />
+          <div class="experience-item__content">
+            <div class="experience-item__header">
+              <a
+                class="experience-item__company"
+                href={exp.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {exp.company}
+              </a>
+              <span class="experience-item__date">{exp.date}</span>
+            </div>
+            <h4 class="experience-item__position">{exp.position}</h4>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .experience-section {
+    width: 100%;
+  }
+
+  .experience-section__title {
+    font-family: var(--font-montserrat);
+    font-size: 4.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 2.2rem;
+    letter-spacing: -2px;
+  }
+
+  .experience-section__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  /* Timeline vertical line */
+  .experience-section__content::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #4c4ff3e0, #e5e7eb);
+  }
+
+  /* Experience Item */
+  .experience-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    padding-left: 3rem;
+    position: relative;
+  }
+
+  .experience-item__marker {
+    position: absolute;
+    left: 0;
+    top: 2rem;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border: 3px solid #4c4ff3e0;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  .experience-item__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .experience-item__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  .experience-item__company {
+    font-family: var(--font-montserrat);
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .experience-item__date {
+    font-size: 0.875rem;
+    color: #9ca3af;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .experience-item__position {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+    color: #bdbdbd;
+    font-style: italic;
+  }
+
+  /* Hover effect */
+  .experience-item {
+    transition: transform 0.2s ease;
+  }
+
+  .experience-item:hover {
+    transform: translateX(4px);
+  }
+
+  .experience-item:hover .experience-item__company {
+    color: #5a5cf3e0;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .experience-section__title {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .experience-item {
+      gap: 1rem;
+      padding: 1rem 0;
+      padding-left: 2.5rem;
+    }
+
+    .experience-item__marker {
+      width: 14px;
+      height: 14px;
+      border-width: 2px;
+    }
+
+    .experience-item__company {
+      font-size: 1rem;
+    }
+
+    .experience-item__position {
+      font-size: 0.9rem;
+    }
+
+    .experience-section__content::before {
+      left: 5px;
+    }
+  }
+</style>

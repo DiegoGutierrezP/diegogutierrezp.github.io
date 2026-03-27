@@ -1,0 +1,107 @@
+---
+import Skills from "./Skills.astro";
+---
+
+<section class="aboutme-section">
+  <h1 class="aboutme-section__title">SOFTWARE <span>ENGINEER</span></h1>
+  <p class="aboutme-section__description">
+    Passionate software engineer and full stack developer with over 4 years of
+    experience creating scalable, user-centric web solutions. I am passionate
+    about continuous learning, teamwork, and turning ideas into impactful
+    projects.
+  </p>
+  <div class="aboutme-section__content-stats">
+    <div class="aboutme-section__content-stat">
+      <h3>+4</h3>
+      <span>Years of experience</span>
+    </div>
+    <div class="aboutme-section__content-stat">
+      <h3>+30</h3>
+      <span>Projects completed</span>
+    </div>
+    <div class="aboutme-section__content-stat">
+      <h3>+10</h3>
+      <span>Technologies mastered</span>
+    </div>
+    <div class="aboutme-section__content-stat">
+      <h3>+5</h3>
+      <span>Certifications obtained</span>
+    </div>
+  </div>
+</section>
+<Skills />
+
+<style>
+  .aboutme-section {
+    /* padding: 2rem; */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .aboutme-section__title {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-montserrat);
+    font-weight: 900;
+    line-height: normal;
+  }
+
+  .aboutme-section__title span {
+    color: #5a5cf3e0 !important;
+  }
+
+  .aboutme-section__description {
+    font-size: 1.25rem;
+    margin: 1rem 0;
+  }
+
+  .aboutme-section__content-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .aboutme-section__content-stat {
+    flex: 1;
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .aboutme-section__content-stat h3 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+    font-family: var(--font-montserrat);
+  }
+  .aboutme-section__content-stat span {
+    font-size: 1.1rem;
+    margin: 0;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .aboutme-section__title {
+      font-size: 4rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .aboutme-section__title {
+      font-size: 3rem;
+    }
+
+    .aboutme-section__description {
+      font-size: 1rem;
+    }
+
+    .aboutme-section__content-stat h3 {
+      font-size: 2rem;
+    }
+
+    .aboutme-section__content-stat span {
+      font-size: 0.95rem;
+    }
+  }
+</style>

@@ -1,0 +1,107 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<footer class="bg-slate-900 border-t border-gray-500/30 mt-12">
+  <div class="max-w-6xl mx-auto px-4 py-12 md:py-16">
+    {/* Desktop Layout */}
+    <div class="hidden md:grid grid-cols-3 gap-12 mb-12">
+      {/* Company Info */}
+      <div class="col-span-2">
+        <h3 class="text-white font-bold text-lg mb-4">Diego Gutierrez</h3>
+        <p class="text-gray-400 text-sm leading-relaxed max-w-[85%]">
+          Thanks for visiting my portfolio. These projects reflect my journey as
+          a developer, combining frontend and backend skills to create scalable,
+          efficient, and meaningful experiences.
+        </p>
+      </div>
+
+      {/* Social Links */}
+      <div>
+        <h4 class="text-white font-bold text-base mb-4">Contáctame</h4>
+        <div class="flex gap-4">
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-2 bg-slate-800 hover:bg-indigo-500 rounded-lg transition duration-300"
+            aria-label="GitHub"
+          >
+            <Icon name="mdi:github" class="w-5 h-5 text-white" />
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-2 bg-slate-800 hover:bg-indigo-500 rounded-lg transition duration-300"
+            aria-label="LinkedIn"
+          >
+            <Icon name="mdi:linkedin" class="w-5 h-5 text-white" />
+          </a>
+          <a
+            href="mailto:diego.gup.75@gmail.com"
+            class="p-2 bg-slate-800 hover:bg-indigo-500 rounded-lg transition duration-300"
+            aria-label="Email"
+          >
+            <Icon name="mdi:email" class="w-5 h-5 text-white" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* Mobile Layout */}
+    <div class="md:hidden mb-8">
+      <div class="flex justify-center gap-4 mb-8">
+        <a
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-2 bg-slate-800 hover:bg-indigo-500 rounded-lg transition duration-300"
+        >
+          <Icon name="mdi:github" class="w-5 h-5 text-white" />
+        </a>
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-2 bg-slate-800 hover:bg-indigo-500 rounded-lg transition duration-300"
+        >
+          <Icon name="mdi:linkedin" class="w-5 h-5 text-white" />
+        </a>
+        <a
+          href="mailto:contact@example.com"
+          class="p-2 bg-slate-800 hover:bg-indigo-500 rounded-lg transition duration-300"
+        >
+          <Icon name="mdi:email" class="w-5 h-5 text-white" />
+        </a>
+      </div>
+    </div>
+
+    {/* Divider */}
+    <div class="border-t border-gray-700 pt-8"></div>
+
+    {/* Bottom Section */}
+    <div
+      class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400"
+    >
+      <p>
+        &copy; {new Date().getFullYear()} Diego Gutierrez. Todos los derechos reservados.
+      </p>
+      <p>
+        Hecho con ❤️ usando <a
+          href="https://astro.build"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-green-400 hover:text-green-300">Astro</a
+        >
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer a:focus-visible {
+    outline: 2px solid #22c55e;
+    outline-offset: 2px;
+  }
+</style>

@@ -1,4 +1,9 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const experiences = [
   {
     company: "Metrica",
@@ -31,7 +36,7 @@ const experiences = [
     url: "https://sigma-peru.com/",
   },
   {
-    company: "Grupo Consigueventas E.I.R.L",
+    company: "Consigueventas",
     position: "Backend Developer",
     date: "Jan 2022 - July 2022",
     url: "https://consigueventas.com/",
@@ -40,7 +45,7 @@ const experiences = [
 ---
 
 <section class="experience-section">
-  <h1 class="section-title">Experience</h1>
+  <h1 class="section-title">{t("experience.title")}</h1>
   <div class="experience-section__content">
     {
       experiences.map((exp) => (
@@ -95,7 +100,7 @@ const experiences = [
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(to bottom, #4c4ff3e0, #e5e7eb);
+    background: linear-gradient(to bottom, var(--color-primary), #e5e7eb);
   }
 
   /* Experience Item */
@@ -114,7 +119,7 @@ const experiences = [
     width: 18px;
     height: 18px;
     background: white;
-    border: 3px solid #4c4ff3e0;
+    border: 3px solid var(--color-primary);
     border-radius: 50%;
     z-index: 2;
   }
@@ -164,7 +169,7 @@ const experiences = [
   }
 
   .experience-item:hover .experience-item__company {
-    color: #5a5cf3e0;
+    color: var(--color-primary);
   }
 
   /* Responsive */

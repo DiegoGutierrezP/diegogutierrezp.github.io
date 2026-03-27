@@ -1,34 +1,39 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import Skills from "./Skills.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class="aboutme-section">
-  <h1 class="aboutme-section__title">SOFTWARE <span>ENGINEER</span></h1>
+  <h1 class="aboutme-section__title">
+    {t("aboutme.title1")}
+    <span>{t("aboutme.title2")}</span>
+  </h1>
   <p class="aboutme-section__description">
-    Passionate software engineer and full stack developer with over 4 years of
-    experience creating scalable, user-centric web solutions. I am passionate
-    about continuous learning, teamwork, and turning ideas into impactful
-    projects.
+    {t("aboutme.description")}
   </p>
-  <div class="aboutme-section__content-stats">
-    <div class="aboutme-section__content-stat">
-      <h3>+4</h3>
-      <span>Years of experience</span>
-    </div>
-    <div class="aboutme-section__content-stat">
-      <h3>+30</h3>
-      <span>Projects completed</span>
-    </div>
-    <div class="aboutme-section__content-stat">
-      <h3>+10</h3>
-      <span>Technologies mastered</span>
-    </div>
-    <div class="aboutme-section__content-stat">
-      <h3>+5</h3>
-      <span>Certifications obtained</span>
-    </div>
-  </div>
 </section>
+<div class="aboutme-section__content-stats">
+  <div class="aboutme-section__content-stat">
+    <h3>+4</h3>
+    <span>{t("aboutme.stat1")}</span>
+  </div>
+  <div class="aboutme-section__content-stat">
+    <h3>+30</h3>
+    <span>{t("aboutme.stat2")}</span>
+  </div>
+  <div class="aboutme-section__content-stat">
+    <h3>+10</h3>
+    <span>{t("aboutme.stat3")}</span>
+  </div>
+  <div class="aboutme-section__content-stat">
+    <h3>+5</h3>
+    <span>{t("aboutme.stat4")}</span>
+  </div>
+</div>
+
 <Skills />
 
 <style>
@@ -47,7 +52,7 @@ import Skills from "./Skills.astro";
   }
 
   .aboutme-section__title span {
-    color: #5a5cf3e0 !important;
+    color: var(--color-primary) !important;
   }
 
   .aboutme-section__description {

@@ -1,0 +1,16 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/Projects.astro";
+
+import { languages } from "../../i18n/ui";
+
+export async function getStaticPaths() {
+  return Object.keys(languages).map((locale) => ({
+    params: { locale },
+  }));
+}
+---
+
+<Layout>
+  <Section />
+</Layout>

@@ -1,11 +1,15 @@
 ---
 import { Icon } from "astro-icon/components";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const links = [
-  { href: "/aboutme", label: "Sobre mí" },
-  { href: "/experience", label: "Experiencia" },
-  { href: "/projects", label: "Proyectos" },
-  { href: "/certificates", label: "Certificados" },
+  { href: `/${lang}/aboutme`, label: t("header.aboutme") },
+  { href: `/${lang}/experience`, label: t("header.experience") },
+  { href: `/${lang}/projects`, label: t("header.projects") },
+  { href: `/${lang}/certificates`, label: t("header.certificates") },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -31,12 +35,12 @@ const currentPath = Astro.url.pathname;
       <div class="lang-selector">
         <button class="lang-btn">
           <Icon name="mdi:globe" class="icon" />
-          <span>ES</span>
+          <span>{lang.toUpperCase()}</span>
           <Icon name="mdi:chevron-down" class="icon icon--chevron" />
         </button>
         <div class="lang-dropdown">
-          <button class="lang-option">Español</button>
-          <button class="lang-option">English</button>
+          <a href="/es" class="lang-option">Español</a>
+          <a href="/en" class="lang-option">English</a>
         </div>
       </div>
     </nav>
@@ -68,8 +72,8 @@ const currentPath = Astro.url.pathname;
       ))
     }
     <div class="mobile-lang">
-      <button class="mobile-lang-opt">ES — Español</button>
-      <button class="mobile-lang-opt">EN — English</button>
+      <a href="/es" class="mobile-lang-opt">ES — Español</a>
+      <a href="/en" class="mobile-lang-opt">EN — English</a>
     </div>
   </nav>
 </header>
@@ -80,7 +84,7 @@ const currentPath = Astro.url.pathname;
     top: 0;
     z-index: 50;
     width: 100%;
-    background: rgba(10, 10, 15, 0.75);
+    /* background: rgba(10, 10, 15, 0.75); */
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -134,7 +138,7 @@ const currentPath = Astro.url.pathname;
     width: 16px;
     height: 2px;
     border-radius: 999px;
-    background: #5a5cf3;
+    background: var(--color-primary);
   }
 
   /* Language selector */
@@ -185,7 +189,7 @@ const currentPath = Astro.url.pathname;
     top: calc(100% + 8px);
     right: 0;
     width: 120px;
-    background: #16161e;
+    background: var(--color-background);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 0.6rem;
     overflow: hidden;

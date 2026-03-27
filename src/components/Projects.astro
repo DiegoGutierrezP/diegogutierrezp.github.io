@@ -1,51 +1,113 @@
 ---
 import { ProjectItem } from "./ProjectItem";
+import fullfillment1 from "../assets/images/projects/juntozfulfillment/alamcenar_productos.webp";
+import fullfillment2 from "../assets/images/projects/juntozfulfillment/almacenar_prod_detalle.webp";
+import fullfillment3 from "../assets/images/projects/juntozfulfillment/empaque_pedido2.webp";
+import fullfillment4 from "../assets/images/projects/juntozfulfillment/empaque_pedidos.webp";
+import fullfillment5 from "../assets/images/projects/juntozfulfillment/inventario.webp";
+import fullfillment6 from "../assets/images/projects/juntozfulfillment/pedido_detalle.webp";
+import sfibras1 from "../assets/images/projects/sfibras/sf_home.jpg";
+import sfibras2 from "../assets/images/projects/sfibras/sf_login.jpg";
+import sfibras3 from "../assets/images/projects/sfibras/sf_catalogo.jpg";
+import sfibras4 from "../assets/images/projects/sfibras/sf_catalog2.jpg";
+import sfibras5 from "../assets/images/projects/sfibras/sf_cotizar.jpg";
+import sfibras6 from "../assets/images/projects/sfibras/sf_crearcoti.jpg";
+import sfibras7 from "../assets/images/projects/sfibras/sf_cotzaciones.jpg";
+import sfibras8 from "../assets/images/projects/sfibras/sf_products.jpg";
+import sfibras9 from "../assets/images/projects/sfibras/sf_rolespermisos.jpg";
+import roobin1 from "../assets/images/projects/roobin/rb_login.jpg";
+import roobin2 from "../assets/images/projects/roobin/rb_register.jpg";
+import roobin3 from "../assets/images/projects/roobin/rb_chat1.jpeg";
+import roobin4 from "../assets/images/projects/roobin/rb_chat2.jpeg";
+import roobin5 from "../assets/images/projects/roobin/rb_chat3.jpeg";
+import roobin6 from "../assets/images/projects/roobin/rb_chat4.jpeg";
+import sigma1 from "../assets/images/projects/sigma/sigma1.jpg";
+import sigma2 from "../assets/images/projects/sigma/sigma2.jpg";
+import sigma3 from "../assets/images/projects/sigma/sigma3.jpg";
+import plazbotmail1 from "../assets/images/projects/plazbotmail/pm_1.jpg";
+import plazbotmail2 from "../assets/images/projects/plazbotmail/pm_2.jpg";
+import plazbotmail3 from "../assets/images/projects/plazbotmail/pm_3.jpg";
+import plazbotmail4 from "../assets/images/projects/plazbotmail/pm_4.jpg";
+import plazbotmail5 from "../assets/images/projects/plazbotmail/pm_5.jpg";
+import plazbotmail6 from "../assets/images/projects/plazbotmail/pm_6.jpg";
+import plazbotmail7 from "../assets/images/projects/plazbotmail/pm_7.jpg";
+import sc1 from "../assets/images/projects/clinicsystem/sc_1.jpg";
+import sc2 from "../assets/images/projects/clinicsystem/sc_2.jpg";
+import sc3 from "../assets/images/projects/clinicsystem/sc_3.jpg";
+import sc4 from "../assets/images/projects/clinicsystem/sc_4.jpg";
+import sc5 from "../assets/images/projects/clinicsystem/sc_5.jpg";
+import sc6 from "../assets/images/projects/clinicsystem/sc_6.jpg";
+import sc7 from "../assets/images/projects/clinicsystem/sc_7.jpg";
+import sc8 from "../assets/images/projects/clinicsystem/sc_8.jpg";
+import sc9 from "../assets/images/projects/clinicsystem/sc_9.jpg";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const projects = [
   {
-    title: "Fullfillment system",
-    description:
-      "Sistema fullfillment para la gestion de inventario y procesamiento de pedidos de marketplace Juntoz",
+    title: t("projects.fulfillment.title"),
+    description: t("projects.fulfillment.description"),
+    images: [
+      fullfillment1,
+      fullfillment2,
+      fullfillment3,
+      fullfillment4,
+      fullfillment5,
+      fullfillment6,
+    ],
   },
   {
-    title: "Sfibras",
-    description:
-      "Software ERP para la gestión de todos los procesos de la empresa Sfibras, con módulos de facturación, administración, inventario, ventas, postventa, etc.",
+    title: t("projects.sfibras.title"),
+    description: t("projects.sfibras.description"),
+    images: [
+      sfibras1,
+      sfibras2,
+      sfibras3,
+      sfibras4,
+      sfibras5,
+      sfibras6,
+      sfibras7,
+      sfibras8,
+      sfibras9,
+    ],
   },
   {
-    title: "Roobin",
-    description:
-      "Asistente virtual que utiliza la API ChatGPT para WhatsApp. Este asistente se integra con diversas aplicaciones de productividad como Gmail, Todoist, Notion, Google Calendar y Slack.",
+    title: t("projects.roobin.title"),
+    description: t("projects.roobin.description"),
+    images: [roobin1, roobin2, roobin3, roobin4, roobin5, roobin6],
   },
   {
-    title: "Sigma DMS",
-    description: "Software de gestión automotriz",
+    title: t("projects.sigma.title"),
+    description: t("projects.sigma.description"),
+    images: [sigma1, sigma2, sigma3],
   },
   {
-    title: "Plazbot Mail",
-    description:
-      "Plataforma de correo electrónico para gestionar tickets e incidentes, con creación de buzones compartidos y chat online integrado.",
+    title: t("projects.plazbotmail.title"),
+    description: t("projects.plazbotmail.description"),
+    images: [
+      plazbotmail1,
+      plazbotmail2,
+      plazbotmail3,
+      plazbotmail4,
+      plazbotmail5,
+      plazbotmail6,
+      plazbotmail7,
+    ],
   },
   {
-    title: "Clinic System",
-    description:
-      "Software de gestión para clínicas, con módulos de citas, historia clínica, facturación, inventario y reportes.",
+    title: t("projects.clinicsystem.title"),
+    description: t("projects.clinicsystem.description"),
+    images: [sc1, sc2, sc3, sc4, sc5, sc6, sc7, sc8, sc9],
   },
 ];
 ---
 
 <section class="projects-section">
-  <h1 class="section-title">Projects</h1>
+  <h1 class="section-title">{t("projects.title")}</h1>
   <div class="projects-section__content">
-    {
-      projects.map((p) => (
-        // <div class="projects-section__content-item">
-        //   <h3>{p.title}</h3>
-        //   <p>{p.description}</p>
-        // </div>
-        <ProjectItem client:load project={p} />
-      ))
-    }
+    {projects.map((p) => <ProjectItem client:load project={p} />)}
   </div>
 </section>
 
@@ -68,11 +130,13 @@ const projects = [
     border-radius: 0.8rem;
     padding: 1.5rem;
     transition: all 0.3s ease;
-    border: #283142 1px solid;
+    /* border: #283142 1px solid; */
+    border: 1px solid var(--color-background-secondary);
   }
 
   .projects-section__content-item:hover {
-    background-color: #283142;
+    /* background-color: #283142; */
+    background-color: var(--color-background-secondary);
   }
 
   .projects-section__content-item h3 {
@@ -80,6 +144,7 @@ const projects = [
     font-weight: 700;
     margin-bottom: 0.5rem;
     font-family: var(--font-montserrat);
+    text-align: start;
   }
 
   .projects-section__content-item p {
@@ -87,6 +152,7 @@ const projects = [
     color: #bdbdbd;
     font-weight: 500;
     margin: 0;
+    text-align: start;
   }
 
   @media (max-width: 768px) {

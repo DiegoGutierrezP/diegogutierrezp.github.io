@@ -2,10 +2,13 @@
 import { Image } from "astro:assets";
 import profileImg from "../assets/images/profile.png";
 import { Icon } from "astro-icon/components";
+import { getLangFromUrl } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <div class="profile-card">
-  <a href="/">
+  <a href=`/${lang}`>
     <Image
       src={profileImg}
       alt="Diego Gutierrez"
@@ -41,7 +44,7 @@ import { Icon } from "astro-icon/components";
       <Icon class="social-icon" name={"mdi:linkedin"} />
       <span>LinkedIn</span>
     </a>
-    <a
+    <!-- <a
       href="mailto:diego.gup.75@gmail.com"
       target="_blank"
       rel="noopener noreferrer"
@@ -49,7 +52,7 @@ import { Icon } from "astro-icon/components";
     >
       <Icon class="social-icon" name={"mdi:email"} />
       <span>Mail</span>
-    </a>
+    </a> -->
   </div>
 </div>
 
@@ -125,13 +128,13 @@ import { Icon } from "astro-icon/components";
   .profile-card__social-links a:hover {
     background-color: #f3f4f6;
     border-color: #d1d5db;
-    color: #4a4cdae0;
+    color: var(--color-primary);
     /* transform: translateY(-1px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); */
   }
 
   .profile-card__social-links a:focus-visible {
-    outline: 2px solid #4a4cdae0;
+    outline: 2px solid var(--color-primary);
     outline-offset: 2px;
   }
 

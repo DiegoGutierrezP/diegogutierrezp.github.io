@@ -5,6 +5,10 @@ import efeSetImg from "../assets/images/certificates/efset_logo.jpg";
 import hackerRankImg from "../assets/images/certificates/hackerrank_logo.jpg";
 import ibmImg from "../assets/images/certificates/ibm_logo.jpg";
 import scrumStudyImg from "../assets/images/certificates/1631356592679.jpg";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const certs = [
   {
@@ -99,7 +103,7 @@ const row2 = certs.slice(half);
 ---
 
 <section class="certificates-section">
-  <h1 class="section-title">Certificates</h1>
+  <h1 class="section-title">{t("certificates.title")}</h1>
   <div class="carousel-outer">
     <!-- Fila 1 — izquierda -->
     <div class="carousel-row row1">
@@ -235,7 +239,8 @@ const row2 = certs.slice(half);
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: #283142;
+    /* background: #283142; */
+    background-color: var(--color-background-secondary);
     border-radius: 0.8rem;
     padding: 0.9rem 1.25rem;
     width: 280px;

@@ -362,20 +362,38 @@ const currentPath = Astro.url.pathname;
 </style>
 
 <script>
-  const burger = document.getElementById("burger");
-  const mobileNav = document.getElementById("mobile-nav");
+  function initBurgerMenu() {
+    const burger = document.getElementById("burger");
+    const mobileNav = document.getElementById("mobile-nav");
 
-  burger?.addEventListener("click", () => {
-    const open = burger.classList.toggle("open");
-    mobileNav?.classList.toggle("open", open);
-    burger.setAttribute("aria-expanded", String(open));
-    mobileNav?.setAttribute("aria-hidden", String(!open));
-  });
+    if (!burger || !mobileNav) return;
 
-  mobileNav?.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      burger?.classList.remove("open");
-      mobileNav.classList.remove("open");
+    // Remove old listeners to prevent duplicates
+    const newBurger = burger.cloneNode(true);
+    burger.parentNode?.replaceChild(newBurger, burger);
+
+    newBurger.addEventListener("click", () => {
+      const open = newBurger.classList.toggle("open");
+      mobileNav.classList.toggle("open", open);
+      newBurger.setAttribute("aria-expanded", String(open));
+      mobileNav.setAttribute("aria-hidden", String(!open));
     });
+
+    mobileNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        newBurger.classList.remove("open");
+        mobileNav.classList.remove("open");
+        newBurger.setAttribute("aria-expanded", "false");
+        mobileNav.setAttribute("aria-hidden", "true");
+      });
+    });
+  }
+
+  // Initialize on load
+  initBurgerMenu();
+
+  // Reinitialize on page navigation
+  document.addEventListener("astro:after-swap", () => {
+    initBurgerMenu();
   });
 </script>

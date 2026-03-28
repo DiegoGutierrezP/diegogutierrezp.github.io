@@ -12,8 +12,8 @@ export const ui = {
     "header.projects": "Projects",
     "header.certificates": "Certificates",
 
-    "aboutme.title1": "SOFTWARE",
-    "aboutme.title2": "ENGINEER",
+    "aboutme.title1": "Software",
+    "aboutme.title2": "Engineer",
     "aboutme.description":
       "Passionate software engineer and full stack developer with over 4 years of experience creating scalable, user-centric web solutions. I am passionate about continuous learning, teamwork, and turning ideas into impactful projects.",
     "aboutme.stat1": "Years of experience",
@@ -56,8 +56,8 @@ export const ui = {
     "header.projects": "Proyectos",
     "header.certificates": "Certificados",
 
-    "aboutme.title1": "INGENIERO DE",
-    "aboutme.title2": "SOFTWARE",
+    "aboutme.title1": "Ingeniero de",
+    "aboutme.title2": "Software",
     "aboutme.description":
       "Ingeniero de software apasionado y desarrollador full stack con más de 4 años de experiencia en la creación de soluciones web escalables y centradas en el usuario. Me apasiona el aprendizaje continuo, el trabajo en equipo y convertir ideas en proyectos impactantes.",
     "aboutme.stat1": "Años de experiencia",

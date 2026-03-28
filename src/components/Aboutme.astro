@@ -46,9 +46,9 @@ const t = useTranslations(lang);
   .aboutme-section__title {
     font-size: 5rem;
     margin-bottom: 1rem;
-    font-family: var(--font-montserrat);
-    font-weight: 900;
+    font-weight: 800;
     line-height: normal;
+    letter-spacing: 2px;
   }
 
   .aboutme-section__title span {
@@ -58,6 +58,7 @@ const t = useTranslations(lang);
   .aboutme-section__description {
     font-size: 1.25rem;
     margin: 1rem 0;
+    font-family: var(--font-roboto-mono);
   }
 
   .aboutme-section__content-stats {
@@ -78,17 +79,21 @@ const t = useTranslations(lang);
     font-size: 3rem;
     font-weight: bold;
     margin: 0;
-    font-family: var(--font-montserrat);
   }
   .aboutme-section__content-stat span {
     font-size: 1.1rem;
     margin: 0;
     text-align: center;
+    font-family: var(--font-roboto-mono);
   }
 
   @media (max-width: 768px) {
     .aboutme-section__title {
       font-size: 4rem;
+    }
+
+    .aboutme-section__description {
+      font-size: 1.2rem;
     }
   }
 
@@ -106,7 +111,7 @@ const t = useTranslations(lang);
     }
 
     .aboutme-section__content-stat span {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
   }
 </style>

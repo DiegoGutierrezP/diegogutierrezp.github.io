@@ -108,11 +108,10 @@ export const Modal = ({ isOpen, onClose, children, title }: Props) => {
         }
 
         .modal-title {
-          font-size: 1.2rem;
+          font-size: 1.4rem;
           font-weight: 600;
           color: rgba(255,255,255,0.9);
           margin: 0;
-          font-family: var(--font-montserrat);
         }
 
         .modal-close {
@@ -151,7 +150,7 @@ export const Modal = ({ isOpen, onClose, children, title }: Props) => {
         @media (max-width: 480px) {
           .modal-overlay {
             padding: 1rem;
-            align-items: flex-end;
+            // align-items: flex-end;
           }
 
           .modal-box {

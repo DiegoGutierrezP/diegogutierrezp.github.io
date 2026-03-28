@@ -45,6 +45,14 @@ export default defineConfig({
       weights: [400, 500, 700, 800, 900],
       display: "swap",
       options: {}
+    },
+    {
+      provider: fontProviders.google(),
+      name: "Outfit",
+      cssVariable: "--font-outfit",
+      weights: [400, 500, 700, 800, 900],
+      display: "swap",
+      options: {}
     }
   ]
 });

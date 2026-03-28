@@ -9,6 +9,10 @@ import icon from 'astro-icon';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://DiegoGutierrezP.github.io',
+
+  base: '/portafolio-devdiego-2026/',
+
   integrations: [react(), icon()],
 
   vite: {

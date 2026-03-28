@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import { languages } from "../i18n/ui";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
@@ -39,8 +40,13 @@ const currentPath = Astro.url.pathname;
           <Icon name="mdi:chevron-down" class="icon icon--chevron" />
         </button>
         <div class="lang-dropdown">
-          <a href="/es" class="lang-option">Español</a>
-          <a href="/en" class="lang-option">English</a>
+          {
+            Object.keys(languages).map((code) => (
+              <a href={`/${code}`} class="lang-option">
+                {languages[code as keyof typeof languages]}
+              </a>
+            ))
+          }
         </div>
       </div>
     </nav>
@@ -72,8 +78,19 @@ const currentPath = Astro.url.pathname;
       ))
     }
     <div class="mobile-lang">
-      <a href="/es" class="mobile-lang-opt">ES — Español</a>
-      <a href="/en" class="mobile-lang-opt">EN — English</a>
+      {
+        Object.keys(languages).map((code) => (
+          <a
+            href={`/${code}`}
+            class:list={[
+              "mobile-lang-opt",
+              { "mobile-lang-opt--active": lang === code },
+            ]}
+          >
+            {code.toUpperCase()} - {languages[code as keyof typeof languages]}
+          </a>
+        ))
+      }
     </div>
   </nav>
 </header>
@@ -84,7 +101,6 @@ const currentPath = Astro.url.pathname;
     top: 0;
     z-index: 50;
     width: 100%;
-    /* background: rgba(10, 10, 15, 0.75); */
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -339,6 +355,11 @@ const currentPath = Astro.url.pathname;
     transition:
       color 0.2s,
       background 0.2s;
+  }
+
+  .mobile-lang-opt--active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
   }
 
   .mobile-lang-opt:hover {

@@ -11,8 +11,6 @@ import icon from 'astro-icon';
 export default defineConfig({
   site: 'https://diegogutierrezp.github.io',
 
-  base: '/portafolio-devdiego-2026/',
-
   integrations: [react(), icon()],
 
   vite: {

@@ -15,7 +15,7 @@ export const ui = {
     "aboutme.title1": "Software",
     "aboutme.title2": "Engineer",
     "aboutme.description":
-      "Passionate software engineer and full stack developer with over 4 years of experience creating scalable, user-centric web solutions. I am passionate about continuous learning, teamwork, and turning ideas into impactful projects.",
+      "Software Engineer and Full Stack Developer with over 4+ years of experience building scalable and user-centric web solutions. Graduated in Computer Engineering from Universidad Ricardo Palma, I’m passionate about continuous learning, teamwork, and transforming ideas into impactful digital products through clean architecture and modern technologies.",
     "aboutme.stat1": "Years of experience",
     "aboutme.stat2": "Projects completed",
     "aboutme.stat3": "Technologies mastered",
@@ -59,7 +59,7 @@ export const ui = {
     "aboutme.title1": "Ingeniero de",
     "aboutme.title2": "Software",
     "aboutme.description":
-      "Ingeniero de software apasionado y desarrollador full stack con más de 4 años de experiencia en la creación de soluciones web escalables y centradas en el usuario. Me apasiona el aprendizaje continuo, el trabajo en equipo y convertir ideas en proyectos impactantes.",
+      "Ingeniero de software y desarrollador full stack con más de cuatro años de experiencia en la creación de soluciones web escalables y centradas en el usuario. Titulado en Ingeniería Informática por la Universidad Ricardo Palma, me apasiona el aprendizaje continuo, el trabajo en equipo y la transformación de ideas en productos digitales de gran impacto mediante una arquitectura limpia y tecnologías modernas.",
     "aboutme.stat1": "Años de experiencia",
     "aboutme.stat2": "Proyectos completados",
     "aboutme.stat3": "Tecnologías dominadas",
